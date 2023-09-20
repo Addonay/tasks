@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task API</title>
+</head>
+<body>
+    <h1>Task API</h1>
+    <p>API Endpoint: <code>/api/tasks</code></p>
+    <p><strong>Tasks:</strong></p>
+    <ul>
+        {% for task in tasks %}
+            <li>ID: {{ task.id }}, Title: {{ task.title }}, Completed: {{ task.completed }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

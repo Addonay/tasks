@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task List</title>
+</head>
+<body>
+    <h1>Task List</h1>
+    <form method="POST" action="/add_task">
+        <input type="text" name="title" placeholder="New Task" required>
+        <button type="submit">Add</button>
+    </form>
+    <ul>
+        {% for task in tasks %}
+            <li>
+                <form method="POST" action="/update_task/{{ task.id }}">
+                    <input type="checkbox" {% if task.completed %}checked{% endif %} onchange="this.form.submit()">
+                    {{ task.title }}
+                </form>
+                <form method="POST" action="/delete_task/{{ task.id }}">
+                    <button type="submit">Delete</button>
+                </form>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
