@@ -1,0 +1,5 @@
+# ignore the instance folder
+instance/
+
+# ignore python bytecode files
+__pycache__/
